@@ -32,7 +32,7 @@ static void encode_pk(unsigned char *r, const poly *pk, const unsigned char *see
 *              unsigned char *seed:    pointer to output public seed
 *              const unsigned char *r: pointer to input byte array
 **************************************************/
-static void decode_pk(poly *pk, unsigned char *seed, const unsigned char *r)
+void decode_pk(poly *pk, unsigned char *seed, const unsigned char *r)
 {
   int i;
   poly_frombytes(pk, r);
@@ -80,7 +80,7 @@ static void decode_c(poly *b, poly *v, const unsigned char *r)
 * Arguments:   - poly *a:                   pointer to output polynomial a
 *              - const unsigned char *seed: pointer to input seed
 **************************************************/
-static void gen_a(poly *a, const unsigned char *seed)
+void gen_a(poly *a, const unsigned char *seed)
 {
   poly_uniform(a,seed);
 }
